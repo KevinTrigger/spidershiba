@@ -50,7 +50,7 @@ body {
 }
 
 .main {
-  background-image: url(/img/main/bg.jpg);
+  background-image: url(../img/main/bg.jpg);
   position: relative;
   min-height: 100vh;
   background-repeat: no-repeat;
