@@ -1,32 +1,122 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap");
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local("San Francisco Pro Display Regular"), local("San-Francisco-Pro-Display-Regular"), url("./fonts/SFProDisplay-Regular.woff2") format("woff2"), url("./fonts/SFProDisplay-Regular.woff") format("woff"), url("./fonts/SFProDisplay-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local("San Francisco Pro Display Medium"), local("San-Francisco-Pro-Display-Medium"), url("../fonts/SFProDisplay-Medium.woff2") format("woff2"), url("../fonts/SFProDisplay-Medium.woff") format("woff"), url("../fonts/SFProDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local("San Francisco Pro Display Semibold"), local("San-Francisco-Pro-Display-Semibold"), url("../fonts/SFProDisplay-Semibold.woff2") format("woff2"), url("../fonts/SFProDisplay-Semibold.woff") format("woff"), url("../fonts/SFProDisplay-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local("San Francisco Pro Display Bold"), local("San-Francisco-Pro-Display-Bold"), url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff"), url("../fonts/SFProDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local("San Francisco Pro Display Black"), local("San-Francisco-Pro-Display-Black"), url("../fonts/SFProDisplay-Black.woff2") format("woff2"), url("../fonts/SFProDisplay-Black.woff") format("woff"), url("../fonts/SFProDisplay-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@keyframes running-string {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 body {
   color: #FFFFFF;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'SF Pro Display', sans-serif;
+  font-weight: 400;
 }
 
 .container {
-  padding: 0 92px;
+  max-width: 1736px;
   margin: 0 auto;
-  max-width: 100%;
+  padding: 0 10px;
 }
 
 .main {
-  background: linear-gradient(260.81deg, #162758 2.47%, #0A142A 97.49%);
+  background-image: url(/img/main/bg.jpg);
+  position: relative;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.main-warning {
+  background: #5A4039;
+  list-style-type: none;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.main-warning__wrapper {
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 13px;
+  color: #FFF500;
+  opacity: 60%;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.main-warning__wrapper pre {
+  white-space: nowrap;
+  animation: running-string 10s infinite linear;
+  /* notice the infinite */
+}
+.main-warning__wrapper pre:after {
+  content: 'WARNING: this is not a meme coin    WARNING: this is not a meme coin     WARNING: this is not a meme coin     WARNING: this is not a meme coin     WARNING: this is not a meme coin     WARNING: this is not a meme coin     WARNING: this is not a meme coin     WARNING: this is not a meme coin     WARNING: this is not a meme coin';
 }
 
 .header {
-  padding-top: 30px;
+  padding: 25px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+}
+.header-nav {
+  width: 1063px;
+  display: flex;
+  justify-content: space-between;
+}
+.header-nav a {
+  color: #FFFFFF;
+  font-size: 17px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+.header-nav a:hover {
+  text-decoration: underline;
+  padding-top: 5px;
+  transition: ease-in-out 200ms;
 }
 .header-logo {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
   display: flex;
   flex-direction: row;
   align-items: center;
   font-size: 25px;
   font-weight: 800;
-  line-height: 1.3em;
 }
 .header-logo__img {
   background-color: #E22F2F;
@@ -38,4 +128,104 @@ body {
 }
 .header-logo__name span {
   color: #AC1216;
+}
+.header-btn {
+  background-color: #AC1216;
+  padding: 11px 30px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.main-wrap {
+  margin-top: 68px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-content {
+  max-width: 760px;
+  height: 590px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main-content-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.main-content-title {
+  font-size: 80px;
+  font-weight: 800;
+  line-height: 1.1em;
+}
+.main-content-title span {
+  color: #AC1216;
+}
+.main-content-subtitle {
+  font-size: 25px;
+  font-weight: 500;
+  color: #71768E;
+  margin-top: 10px;
+}
+.main-content-description {
+  color: #A0A3B5;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.1em;
+}
+.main-content-buttons .btn__darked {
+  background-color: #E11D2E;
+  padding: 25px 54px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+.main-content-buttons .btn__transperent {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  padding: 25px 65px;
+  margin-left: 25px;
+}
+.main-content-address {
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+  max-width: 700px;
+  padding: 15px 50px 15px 30px;
+}
+.main-content-address__title {
+  opacity: 0.2;
+  font-size: 15px;
+  font-weight: 500;
+}
+.main-content-address__key {
+  font-size: 25px;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+/* xs (<=543px) */
+@media screen and (max-width: 575px) {
+  .container {
+    max-width: 325px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .header-nav {
+    display: none;
+  }
 }
